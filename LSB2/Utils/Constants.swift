@@ -14,4 +14,7 @@ struct Constants {
     static let noTextFoundMessage = "No text found"
     static let decryptingErrorMessage = "Unknown decrypting error"
     static let encryptingErrorMessage = "Unknown encrypting error"
+    
+    // Settings
+    static let saveToPhotosKey = "didSaveToPhotos"
 }

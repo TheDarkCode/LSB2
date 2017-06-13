@@ -26,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         UINavigationBar.appearance().isHidden = true
         
+        SettingsManager.instance.update()
+        
         return true
     }
 

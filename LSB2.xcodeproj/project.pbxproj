@@ -13,6 +13,13 @@
 		C82C9E831EC8825700ACB1AB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C82C9E811EC8825700ACB1AB /* LaunchScreen.storyboard */; };
 		C82C9E911EC882B600ACB1AB /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C82C9E901EC882B600ACB1AB /* MainViewController.swift */; };
 		C84A2BA21EDBFA0A00656879 /* Notification+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C84A2BA11EDBFA0A00656879 /* Notification+Extension.swift */; };
+		C85FCBE61EEEAFA3008BAC63 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FCBE51EEEAFA3008BAC63 /* UICollectionView+Extension.swift */; };
+		C85FCBEA1EEEAFFD008BAC63 /* SavedImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FCBE81EEEAFFD008BAC63 /* SavedImageCollectionCell.swift */; };
+		C85FCBEB1EEEAFFD008BAC63 /* SavedImageCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85FCBE91EEEAFFD008BAC63 /* SavedImageCollectionCell.xib */; };
+		C85FCBED1EEEB12F008BAC63 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FCBEC1EEEB12F008BAC63 /* Date+Extension.swift */; };
+		C85FCBEF1EEEB1F9008BAC63 /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FCBEE1EEEB1F9008BAC63 /* DataManager.swift */; };
+		C85FCBF21EEEB77B008BAC63 /* SavedPhotosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C85FCBF01EEEB77B008BAC63 /* SavedPhotosViewController.swift */; };
+		C85FCBF31EEEB77B008BAC63 /* SavedPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = C85FCBF11EEEB77B008BAC63 /* SavedPhotosViewController.xib */; };
 		C865F30F1ED8275700919A5C /* TitleTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865F30D1ED8275700919A5C /* TitleTableCell.swift */; };
 		C865F3101ED8275700919A5C /* TitleTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C865F30E1ED8275700919A5C /* TitleTableCell.xib */; };
 		C865F3161ED8283900919A5C /* NibLoadableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865F3151ED8283900919A5C /* NibLoadableView.swift */; };
@@ -34,6 +41,10 @@
 		C865F33D1ED862AD00919A5C /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865F33C1ED862AD00919A5C /* Alertable.swift */; };
 		C865F33F1ED8679200919A5C /* DecryptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865F33E1ED8679200919A5C /* DecryptViewController.swift */; };
 		C865F3411ED867F200919A5C /* EncryptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C865F3401ED867F200919A5C /* EncryptViewController.swift */; };
+		C89D16351EEFC11500585EB2 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D16341EEFC11500585EB2 /* SettingsViewController.swift */; };
+		C89D16391EEFC1D200585EB2 /* SwitchSettingsTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D16371EEFC1D200585EB2 /* SwitchSettingsTableCell.swift */; };
+		C89D163A1EEFC1D200585EB2 /* SwitchSettingsTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C89D16381EEFC1D200585EB2 /* SwitchSettingsTableCell.xib */; };
+		C89D163D1EEFC54B00585EB2 /* SettingsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D163C1EEFC54B00585EB2 /* SettingsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +57,13 @@
 		C82C9E841EC8825700ACB1AB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C82C9E901EC882B600ACB1AB /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = VCs/Main/MainViewController.swift; sourceTree = "<group>"; };
 		C84A2BA11EDBFA0A00656879 /* Notification+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Notification+Extension.swift"; path = "Extensions/Notification+Extension.swift"; sourceTree = "<group>"; };
+		C85FCBE51EEEAFA3008BAC63 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UICollectionView+Extension.swift"; path = "Extensions/UICollectionView+Extension.swift"; sourceTree = "<group>"; };
+		C85FCBE81EEEAFFD008BAC63 /* SavedImageCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedImageCollectionCell.swift; path = Views/Cells/SavedImageCollectionCell/SavedImageCollectionCell.swift; sourceTree = "<group>"; };
+		C85FCBE91EEEAFFD008BAC63 /* SavedImageCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SavedImageCollectionCell.xib; path = Views/Cells/SavedImageCollectionCell/SavedImageCollectionCell.xib; sourceTree = "<group>"; };
+		C85FCBEC1EEEB12F008BAC63 /* Date+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Date+Extension.swift"; path = "Extensions/Date+Extension.swift"; sourceTree = "<group>"; };
+		C85FCBEE1EEEB1F9008BAC63 /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DataManager.swift; path = Model/DataManager.swift; sourceTree = "<group>"; };
+		C85FCBF01EEEB77B008BAC63 /* SavedPhotosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SavedPhotosViewController.swift; path = VCs/SavedPhotos/SavedPhotosViewController.swift; sourceTree = "<group>"; };
+		C85FCBF11EEEB77B008BAC63 /* SavedPhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SavedPhotosViewController.xib; path = VCs/SavedPhotos/SavedPhotosViewController.xib; sourceTree = "<group>"; };
 		C865F30D1ED8275700919A5C /* TitleTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TitleTableCell.swift; path = Views/Cells/TitleTableCell/TitleTableCell.swift; sourceTree = "<group>"; };
 		C865F30E1ED8275700919A5C /* TitleTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = TitleTableCell.xib; path = Views/Cells/TitleTableCell/TitleTableCell.xib; sourceTree = "<group>"; };
 		C865F3151ED8283900919A5C /* NibLoadableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = NibLoadableView.swift; path = Protocols/NibLoadableView.swift; sourceTree = "<group>"; };
@@ -67,6 +85,10 @@
 		C865F33C1ED862AD00919A5C /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alertable.swift; path = Protocols/Alertable.swift; sourceTree = "<group>"; };
 		C865F33E1ED8679200919A5C /* DecryptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecryptViewController.swift; path = VCs/Decrypt/DecryptViewController.swift; sourceTree = "<group>"; };
 		C865F3401ED867F200919A5C /* EncryptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncryptViewController.swift; path = VCs/Encrypt/EncryptViewController.swift; sourceTree = "<group>"; };
+		C89D16341EEFC11500585EB2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = VCs/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
+		C89D16371EEFC1D200585EB2 /* SwitchSettingsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchSettingsTableCell.swift; path = Views/Cells/SaveTypeSettingsTableCell/SwitchSettingsTableCell.swift; sourceTree = "<group>"; };
+		C89D16381EEFC1D200585EB2 /* SwitchSettingsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchSettingsTableCell.xib; path = Views/Cells/SaveTypeSettingsTableCell/SwitchSettingsTableCell.xib; sourceTree = "<group>"; };
+		C89D163C1EEFC54B00585EB2 /* SettingsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsManager.swift; path = Model/SettingsManager.swift; sourceTree = "<group>"; };
 		F70EDED32E6333F8FF3918D3 /* Pods_LSB2.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LSB2.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -129,6 +151,8 @@
 		C82C9E8A1EC8827900ACB1AB /* VCs */ = {
 			isa = PBXGroup;
 			children = (
+				C89D16311EEFBE6F00585EB2 /* Settings */,
+				C85FCBE21EEEAE14008BAC63 /* SavedPhotos */,
 				C83039641EC8857600D6112C /* Decrypt */,
 				C830395B1EC8853D00D6112C /* Encrypt */,
 				C82C9E8F1EC882A300ACB1AB /* Main */,
@@ -160,6 +184,24 @@
 			name = Decrypt;
 			sourceTree = "<group>";
 		};
+		C85FCBE21EEEAE14008BAC63 /* SavedPhotos */ = {
+			isa = PBXGroup;
+			children = (
+				C85FCBF01EEEB77B008BAC63 /* SavedPhotosViewController.swift */,
+				C85FCBF11EEEB77B008BAC63 /* SavedPhotosViewController.xib */,
+			);
+			name = SavedPhotos;
+			sourceTree = "<group>";
+		};
+		C85FCBE71EEEAFC9008BAC63 /* SavedImageCollectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				C85FCBE81EEEAFFD008BAC63 /* SavedImageCollectionCell.swift */,
+				C85FCBE91EEEAFFD008BAC63 /* SavedImageCollectionCell.xib */,
+			);
+			name = SavedImageCollectionCell;
+			sourceTree = "<group>";
+		};
 		C865F3061ED826FA00919A5C /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,6 +213,8 @@
 		C865F3071ED8270000919A5C /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				C89D16361EEFC15C00585EB2 /* SwitchSettingsTableCell */,
+				C85FCBE71EEEAFC9008BAC63 /* SavedImageCollectionCell */,
 				C865F3311ED8455800919A5C /* ActionTableCell */,
 				C865F32C1ED844A200919A5C /* TextViewTableCell */,
 				C865F31B1ED8295D00919A5C /* ImagePickerTableCell */,
@@ -195,8 +239,10 @@
 				C865F3201ED82AEA00919A5C /* UIViewController+Extension.swift */,
 				C865F3281ED843B700919A5C /* String+Extensions.swift */,
 				C865F32A1ED843D000919A5C /* Character+Extensions.swift */,
-				C865F3361ED8465F00919A5C /* UIColor+Extension.swift */,
 				C84A2BA11EDBFA0A00656879 /* Notification+Extension.swift */,
+				C85FCBE51EEEAFA3008BAC63 /* UICollectionView+Extension.swift */,
+				C865F3361ED8465F00919A5C /* UIColor+Extension.swift */,
+				C85FCBEC1EEEB12F008BAC63 /* Date+Extension.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -233,6 +279,8 @@
 			isa = PBXGroup;
 			children = (
 				C865F3261ED8436B00919A5C /* PixelData.swift */,
+				C85FCBEE1EEEB1F9008BAC63 /* DataManager.swift */,
+				C89D163C1EEFC54B00585EB2 /* SettingsManager.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -253,6 +301,23 @@
 				C865F3331ED8457700919A5C /* ActionTableCell.xib */,
 			);
 			name = ActionTableCell;
+			sourceTree = "<group>";
+		};
+		C89D16311EEFBE6F00585EB2 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				C89D16341EEFC11500585EB2 /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		C89D16361EEFC15C00585EB2 /* SwitchSettingsTableCell */ = {
+			isa = PBXGroup;
+			children = (
+				C89D16371EEFC1D200585EB2 /* SwitchSettingsTableCell.swift */,
+				C89D16381EEFC1D200585EB2 /* SwitchSettingsTableCell.xib */,
+			);
+			name = SwitchSettingsTableCell;
 			sourceTree = "<group>";
 		};
 		D81C4E36AED1CD5B01407590 /* Frameworks */ = {
@@ -300,6 +365,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = YW44GH9BVZ;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -326,11 +396,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C85FCBEB1EEEAFFD008BAC63 /* SavedImageCollectionCell.xib in Resources */,
 				C865F3301ED844C400919A5C /* TextViewTableCell.xib in Resources */,
 				C865F31F1ED8298600919A5C /* ImagePickerTableCell.xib in Resources */,
 				C865F3351ED8457700919A5C /* ActionTableCell.xib in Resources */,
 				C865F3101ED8275700919A5C /* TitleTableCell.xib in Resources */,
+				C85FCBF31EEEB77B008BAC63 /* SavedPhotosViewController.xib in Resources */,
 				C82C9E831EC8825700ACB1AB /* LaunchScreen.storyboard in Resources */,
+				C89D163A1EEFC1D200585EB2 /* SwitchSettingsTableCell.xib in Resources */,
 				C82C9E801EC8825700ACB1AB /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -393,23 +466,31 @@
 				C865F3411ED867F200919A5C /* EncryptViewController.swift in Sources */,
 				C865F3161ED8283900919A5C /* NibLoadableView.swift in Sources */,
 				C865F3291ED843B700919A5C /* String+Extensions.swift in Sources */,
+				C89D16391EEFC1D200585EB2 /* SwitchSettingsTableCell.swift in Sources */,
 				C865F3371ED8465F00919A5C /* UIColor+Extension.swift in Sources */,
 				C82C9E791EC8825700ACB1AB /* AppDelegate.swift in Sources */,
+				C85FCBED1EEEB12F008BAC63 /* Date+Extension.swift in Sources */,
 				C865F32F1ED844C400919A5C /* TextViewTableCell.swift in Sources */,
 				C865F33F1ED8679200919A5C /* DecryptViewController.swift in Sources */,
 				C865F3341ED8457700919A5C /* ActionTableCell.swift in Sources */,
 				C865F32B1ED843D000919A5C /* Character+Extensions.swift in Sources */,
 				C865F30F1ED8275700919A5C /* TitleTableCell.swift in Sources */,
+				C85FCBEA1EEEAFFD008BAC63 /* SavedImageCollectionCell.swift in Sources */,
 				C865F3181ED8285400919A5C /* ReusableView.swift in Sources */,
+				C85FCBE61EEEAFA3008BAC63 /* UICollectionView+Extension.swift in Sources */,
 				C865F3271ED8436B00919A5C /* PixelData.swift in Sources */,
 				C865F33D1ED862AD00919A5C /* Alertable.swift in Sources */,
 				C865F31E1ED8298600919A5C /* ImagePickerTableCell.swift in Sources */,
 				C865F3241ED842E500919A5C /* Utils.swift in Sources */,
 				C82C9E911EC882B600ACB1AB /* MainViewController.swift in Sources */,
 				C865F3211ED82AEA00919A5C /* UIViewController+Extension.swift in Sources */,
+				C85FCBEF1EEEB1F9008BAC63 /* DataManager.swift in Sources */,
 				C865F31A1ED8288300919A5C /* UITableView+Extension.swift in Sources */,
+				C85FCBF21EEEB77B008BAC63 /* SavedPhotosViewController.swift in Sources */,
 				C84A2BA21EDBFA0A00656879 /* Notification+Extension.swift in Sources */,
 				C865F33B1ED8555500919A5C /* Constants.swift in Sources */,
+				C89D163D1EEFC54B00585EB2 /* SettingsManager.swift in Sources */,
+				C89D16351EEFC11500585EB2 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

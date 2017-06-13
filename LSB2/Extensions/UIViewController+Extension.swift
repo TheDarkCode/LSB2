@@ -22,12 +22,11 @@ extension UIViewController: UIImagePickerControllerDelegate, UINavigationControl
     
     func image(_ image: UIImage, didFinishSavingWithError error: Error?, contextInfo: UnsafeRawPointer) {
         if let error = error {
-            // we got back an error!
-            let ac = UIAlertController(title: "Ошибка сохранения", message: error.localizedDescription, preferredStyle: .alert)
+            let ac = UIAlertController(title: "Saving error", message: error.localizedDescription, preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         } else {
-            let ac = UIAlertController(title: "Готово", message: "Фотография сохранена в галерею.", preferredStyle: .alert)
+            let ac = UIAlertController(title: "Saved", message: "Image saved to Photos", preferredStyle: .alert)
             ac.addAction(UIAlertAction(title: "OK", style: .default))
             present(ac, animated: true)
         }

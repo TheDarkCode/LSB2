@@ -149,7 +149,15 @@ extension EncryptViewController {
                 self.showMessage(title: "Unknown error")
                 return
             }
-            UIImageWriteToSavedPhotosAlbum(newImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+        
+            DataManager.instance.save(image: newImage)
+            
+            if let didSaveToPhotos = SettingsManager.instance.settings[Constants.saveToPhotosKey] as? Bool,
+                didSaveToPhotos == true {
+                UIImageWriteToSavedPhotosAlbum(newImage, self, #selector(self.image(_:didFinishSavingWithError:contextInfo:)), nil)
+            } else {
+                self.showMessage(title: "Saved", message: "Image saved to library", handler: nil)
+            }
         }
         
     }

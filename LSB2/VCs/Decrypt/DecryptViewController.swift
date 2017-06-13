@@ -24,6 +24,7 @@ class DecryptViewController: UITableViewController, Alertable {
         tableView.register(TitleTableCell.self)
         
         tableView.keyboardDismissMode = .onDrag
+        
     }
 
     override func numberOfSections(in tableView: UITableView) -> Int {

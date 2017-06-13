@@ -12,4 +12,15 @@ extension String {
     var asciiArray: [UInt32] {
         return unicodeScalars.filter{$0.isASCII}.map{$0.value}
     }
+    
+    func toDate() -> Date? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        return dateFormatter.date(from: self)
+    }
+    
+    func cuttedToShortDate() -> String {
+        let index = self.index(self.startIndex, offsetBy: 10)
+        return self.substring(to: index)
+    }
 }

@@ -26,10 +26,8 @@ class MainViewController: TabmanViewController {
             appearance.layout.edgeInset = self.view.bounds.width / 2
             appearance.layout.height = TabmanBar.Height.explicit(value: Constants.tabmanBarHeight)
         })
-        
+    
     }
-
-   
 
 }
 
@@ -38,10 +36,12 @@ extension MainViewController: PageboyViewControllerDataSource {
     
     func viewControllers(forPageboyViewController pageboyViewController: PageboyViewController) -> [UIViewController]? {
         
-        let VCs = [EncryptViewController(), DecryptViewController()]
+        let VCs = [EncryptViewController(), DecryptViewController(), SavedPhotosViewController(), SettingsViewController()]
         
         self.bar.items = [TabmanBarItem(title: "Encrypt"),
-                          TabmanBarItem(title: "Decrypt")]
+                          TabmanBarItem(title: "Decrypt"),
+                          TabmanBarItem(title: "Library"),
+                          TabmanBarItem(title: "Settings")]
         
         return VCs
     }
