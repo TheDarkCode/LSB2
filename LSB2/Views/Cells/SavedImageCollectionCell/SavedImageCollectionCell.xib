@@ -30,14 +30,24 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pji-5P-4tr">
+                        <rect key="frame" x="4" y="4" width="192" height="160"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                    </textView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="Gec-7j-2EQ" secondAttribute="bottom" constant="8" id="Acc-yi-bvx"/>
+                <constraint firstItem="Pji-5P-4tr" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="4" id="Apl-XF-Ash"/>
                 <constraint firstItem="0cB-xX-G2n" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HNS-WV-FBO"/>
+                <constraint firstItem="Pji-5P-4tr" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="4" id="Nwv-Kk-jmH"/>
+                <constraint firstAttribute="trailing" secondItem="Pji-5P-4tr" secondAttribute="trailing" constant="4" id="P7a-gY-Cek"/>
                 <constraint firstAttribute="trailing" secondItem="0cB-xX-G2n" secondAttribute="trailing" id="SZ6-Fm-hCq"/>
                 <constraint firstItem="0cB-xX-G2n" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="U87-a0-iK4"/>
                 <constraint firstAttribute="trailing" secondItem="Gec-7j-2EQ" secondAttribute="trailing" constant="8" id="WfN-iq-EEb"/>
+                <constraint firstItem="Gec-7j-2EQ" firstAttribute="top" secondItem="Pji-5P-4tr" secondAttribute="bottom" constant="8" id="c11-Yr-VU1"/>
                 <constraint firstItem="Gec-7j-2EQ" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="h0E-3J-Zro"/>
                 <constraint firstAttribute="bottom" secondItem="0cB-xX-G2n" secondAttribute="bottom" id="ikB-qr-YoE"/>
             </constraints>
@@ -45,6 +55,7 @@
             <connections>
                 <outlet property="ibDateLabel" destination="Gec-7j-2EQ" id="fAu-Q7-V7m"/>
                 <outlet property="ibImageView" destination="0cB-xX-G2n" id="OCC-3d-FTC"/>
+                <outlet property="ibTextView" destination="Pji-5P-4tr" id="Pnm-JF-ezU"/>
             </connections>
             <point key="canvasLocation" x="111" y="110"/>
         </collectionViewCell>

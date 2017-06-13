@@ -85,6 +85,8 @@
 		C865F33C1ED862AD00919A5C /* Alertable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alertable.swift; path = Protocols/Alertable.swift; sourceTree = "<group>"; };
 		C865F33E1ED8679200919A5C /* DecryptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DecryptViewController.swift; path = VCs/Decrypt/DecryptViewController.swift; sourceTree = "<group>"; };
 		C865F3401ED867F200919A5C /* EncryptViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EncryptViewController.swift; path = VCs/Encrypt/EncryptViewController.swift; sourceTree = "<group>"; };
+		C8763ABC1EEFEB7000A84593 /* SplashWindow.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SplashWindow.framework; path = "../../../Downloads/SplashWindow-master/Demo/SplashWindow.framework"; sourceTree = "<group>"; };
+		C8763ABD1EEFEB7000A84593 /* ZHExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ZHExtensions.framework; path = "../../../Downloads/SplashWindow-master/Demo/ZHExtensions.framework"; sourceTree = "<group>"; };
 		C89D16341EEFC11500585EB2 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = VCs/Settings/SettingsViewController.swift; sourceTree = "<group>"; };
 		C89D16371EEFC1D200585EB2 /* SwitchSettingsTableCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwitchSettingsTableCell.swift; path = Views/Cells/SaveTypeSettingsTableCell/SwitchSettingsTableCell.swift; sourceTree = "<group>"; };
 		C89D16381EEFC1D200585EB2 /* SwitchSettingsTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchSettingsTableCell.xib; path = Views/Cells/SaveTypeSettingsTableCell/SwitchSettingsTableCell.xib; sourceTree = "<group>"; };
@@ -323,6 +325,8 @@
 		D81C4E36AED1CD5B01407590 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C8763ABC1EEFEB7000A84593 /* SplashWindow.framework */,
+				C8763ABD1EEFEB7000A84593 /* ZHExtensions.framework */,
 				F70EDED32E6333F8FF3918D3 /* Pods_LSB2.framework */,
 			);
 			name = Frameworks;
@@ -607,12 +611,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YW44GH9BVZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LSB2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexander-Kravchenko.LSB2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -622,12 +632,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = YW44GH9BVZ;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = LSB2/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "Alexander-Kravchenko.LSB2";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

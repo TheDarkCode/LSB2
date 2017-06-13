@@ -6,7 +6,7 @@
 //  Copyright © 2017 Askrav's Inc. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension String {
     var asciiArray: [UInt32] {
@@ -22,5 +22,18 @@ extension String {
     func cuttedToShortDate() -> String {
         let index = self.index(self.startIndex, offsetBy: 10)
         return self.substring(to: index)
+    }
+    
+    func stroked(size: CGFloat) -> NSMutableAttributedString {
+        let strokeTextAttributes = [
+            NSStrokeColorAttributeName : UIColor.black,
+            NSForegroundColorAttributeName : UIColor.white,
+            NSStrokeWidthAttributeName : -4.0,
+            NSFontAttributeName : UIFont.boldSystemFont(ofSize: size)
+            ] as [String : Any]
+        
+        let customizedText = NSMutableAttributedString(string: self,
+                                                       attributes: strokeTextAttributes)
+        return customizedText
     }
 }

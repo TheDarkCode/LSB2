@@ -8,17 +8,20 @@
 
 import UIKit
 import MessageUI
+import PKHUD
 
 class SavedPhotosViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     @IBOutlet private weak var noImagesLabel: UILabel!
     
-    var isNoImagesLabelHidden = true {
+    fileprivate var isNoImagesLabelHidden = true {
         didSet {
             noImagesLabel.isHidden = isNoImagesLabelHidden
         }
     }
+    
+    fileprivate var showedTextItemId = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,20 +34,17 @@ class SavedPhotosViewController: UIViewController, MFMailComposeViewControllerDe
         setupNoImagesLabel()
         
         if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            flowLayout.sectionInset.left = 5
-            flowLayout.sectionInset.right = 5
-            let width = view.bounds.width / 2
+            flowLayout.sectionInset.left = 2
+            flowLayout.sectionInset.right = 2
+            flowLayout.sectionInset.top = 2
+            flowLayout.sectionInset.bottom = 2
+            let width = UIScreen.main.bounds.width / 2.1
             flowLayout.itemSize.width = width
             flowLayout.itemSize.height = width
         }
         
-        NotificationCenter.default.addObserver(self, selector: #selector(imagesLoaded), name: .LoadedFromLocalStorage, object: nil)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(imagesLoaded), name: .StorageUpdated, object: nil)
+     
         DataManager.instance.loadImages()
     }
     
@@ -54,8 +54,9 @@ class SavedPhotosViewController: UIViewController, MFMailComposeViewControllerDe
         isNoImagesLabelHidden = true
     }
     
-    fileprivate func sendMail(with image: UIImage) {
+    private func sendMail(with image: UIImage) {
         if MFMailComposeViewController.canSendMail() {
+            navigationController?.isNavigationBarHidden = false
             let mail = MFMailComposeViewController()
             mail.mailComposeDelegate = self
             mail.setMessageBody("", isHTML: false)
@@ -64,18 +65,40 @@ class SavedPhotosViewController: UIViewController, MFMailComposeViewControllerDe
             self.present(mail, animated: true, completion: nil)
         }
     }
+    
+    private func reloadImageWithDecryptedTextIfNeeded(newId: Int) {
+        if showedTextItemId != -1, showedTextItemId < DataManager.instance.images.count {
+            let oldIndexPath = IndexPath(item: showedTextItemId, section: 0)
+            showedTextItemId = newId
+            collectionView.reloadItems(at: [oldIndexPath])
+        }
+    }
+    
+    private func showTextOnItem(with id: Int) {
+        reloadImageWithDecryptedTextIfNeeded(newId: id)
+        showedTextItemId = id
+        let newIndexPath = IndexPath(item: id, section: 0)
+        collectionView.reloadItems(at: [newIndexPath])
+    }
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        navigationController?.isNavigationBarHidden = false
         controller.dismiss(animated: true, completion: nil)
     }
     
     fileprivate func chooseAction(id: Int, image: UIImage) {
         let alertSheet = UIAlertController(title: "Choose action", message: nil, preferredStyle: .actionSheet)
+        
+        alertSheet.addAction(UIAlertAction(title: "Decrypt text", style: .default) { action in
+            self.showTextOnItem(with: id)
+        })
+        
         alertSheet.addAction(UIAlertAction(title: "Send via Email", style: .default) { action in
             self.sendMail(with: image)
         })
         
         alertSheet.addAction(UIAlertAction(title: "Delete", style: .destructive) { action in
+            self.reloadImageWithDecryptedTextIfNeeded(newId: -1)
             DataManager.instance.remove(imageWith: id)
             let indexPath = IndexPath(item: id, section: 0)
             self.collectionView.deleteItems(at: [indexPath])
@@ -97,14 +120,33 @@ extension SavedPhotosViewController: UICollectionViewDelegate, UICollectionViewD
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: SavedImageCollectionCell = collectionView.dequeueReusableCell(for: indexPath)
-        cell.update(with: DataManager.instance.images[indexPath.row], name: DataManager.instance.names[indexPath.row].cuttedToShortDate())
+        
+        if indexPath.row == showedTextItemId {
+            HUD.show(.progress)
+            Utils().decrypt(image: DataManager.instance.images[indexPath.row]) { result in
+                HUD.hide()
+                cell.update(with: DataManager.instance.images[indexPath.row],
+                            name: DataManager.instance.names[indexPath.row].cuttedToShortDate(),
+                            showText: true,
+                            text: result)
+            }
+        } else {
+            cell.update(with: DataManager.instance.images[indexPath.row], name: DataManager.instance.names[indexPath.row].cuttedToShortDate())
+        }
+        
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let image = DataManager.instance.images[indexPath.row]
-        chooseAction(id: indexPath.row, image: image)
+        if showedTextItemId == indexPath.row {
+            showedTextItemId = -1
+            collectionView.reloadItems(at: [indexPath])
+        } else {
+            let image = DataManager.instance.images[indexPath.row]
+            chooseAction(id: indexPath.row, image: image)
+        }
     }
+    
 }
 
 //MARK: - Notification handler

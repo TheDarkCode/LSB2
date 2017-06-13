@@ -51,15 +51,16 @@ class DataManager {
     func save(image: UIImage) {
         let imgName = Date().toFullString()
         saveToDocuments(image: image, name: imgName)
+        images.append(image)
         names.append(imgName)
         UserDefaults.standard.set(names, forKey: "names")
+        NotificationCenter.default.post(name: .StorageUpdated, object: nil)
     }
     
     func loadImages() {
         self.images.removeAll()
         DispatchQueue.global().async {
             if let namesArray =  UserDefaults.standard.array(forKey: "names") as? [String] {
-                print(namesArray)
                 self.names = namesArray
                 for name in namesArray {
                     let filename = self.getDocumentsDirectory().appendingPathComponent(name)
@@ -68,7 +69,7 @@ class DataManager {
                 }
             }
             DispatchQueue.main.async {
-                NotificationCenter.default.post(name: .LoadedFromLocalStorage, object: nil)
+                NotificationCenter.default.post(name: .StorageUpdated, object: nil)
             }
         }
         

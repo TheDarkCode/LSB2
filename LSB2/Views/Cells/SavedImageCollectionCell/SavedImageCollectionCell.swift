@@ -12,6 +12,7 @@ class SavedImageCollectionCell: UICollectionViewCell, NibLoadableView, ReusableV
 
     @IBOutlet private weak var ibImageView: UIImageView!
     @IBOutlet private weak var ibDateLabel: UILabel!
+    @IBOutlet private weak var ibTextView: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,11 +20,21 @@ class SavedImageCollectionCell: UICollectionViewCell, NibLoadableView, ReusableV
         ibDateLabel.font = UIFont.boldSystemFont(ofSize: 14)
         ibDateLabel.textColor = .white
         ibDateLabel.textAlignment = .center
+        
+        ibTextView.backgroundColor = .clear
+        ibTextView.isUserInteractionEnabled = false
     }
 
-    func update(with image: UIImage, name: String) {
+    func update(with image: UIImage, name: String, showText: Bool = false, text: String? = nil) {
         ibImageView.image = image
-        ibDateLabel.text = name
+        ibDateLabel.attributedText = name.stroked(size: 14)
+        
+        if showText {
+            guard let decryptedText = text else {return}
+            ibTextView.attributedText = decryptedText.stroked(size: 14)
+        } else {
+            ibTextView.attributedText = NSAttributedString(string: "")
+        }
     }
     
 }

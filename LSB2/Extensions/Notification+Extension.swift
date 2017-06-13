@@ -11,5 +11,7 @@ import Foundation
 extension Notification.Name {
     static let FinishedDecrypting = Notification.Name("FinishedDecrypting")
     
+    static let StorageUpdated = Notification.Name("StorageUpdated")
+    
     static let LoadedFromLocalStorage = Notification.Name("LoadedFromLocalStorage")
 }
