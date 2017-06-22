@@ -82,7 +82,7 @@ class SavedPhotosViewController: UIViewController, MFMailComposeViewControllerDe
     }
 
     func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
-        navigationController?.isNavigationBarHidden = false
+        navigationController?.isNavigationBarHidden = true
         controller.dismiss(animated: true, completion: nil)
     }
     

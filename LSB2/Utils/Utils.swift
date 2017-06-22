@@ -10,7 +10,7 @@ import UIKit
 
 class Utils {
     
-    private let endSymbols: String = "&^/"
+    private let endSymbols: String = "&^//]!21s3;"
     private var binaryEndSymbols: [String] = []
     
     
@@ -58,10 +58,11 @@ class Utils {
     }
     
     
-    func toDecimals(string: String) -> [String] {
+    func toDecimals(string: String) -> [String]? {
         var result: [String] = []
         for char in string.characters {
-            var dec = String(char.asciiValue!, radix: 2)
+            guard let asciiValue = char.asciiValue else {return nil}
+            var dec = String(asciiValue, radix: 2)
             for _ in dec.characters.count..<8 {
                 dec.insert("0", at: dec.startIndex)
             }
@@ -135,7 +136,12 @@ class Utils {
                 }
                 return
             }
-            let binaryMessage = self.toDecimals(string: text)
+            guard let binaryMessage = self.toDecimals(string: text) else {
+                DispatchQueue.main.async {
+                    completion(nil)
+                }
+                return
+            }
             var counter: Int = 0
             
             for letter in binaryMessage {
@@ -164,7 +170,7 @@ class Utils {
     
     func decrypt(image: UIImage, completion: @escaping (String) -> (Void)) {
         DispatchQueue.global().async {
-            self.binaryEndSymbols = self.toDecimals(string: self.endSymbols)
+            self.binaryEndSymbols = self.toDecimals(string: self.endSymbols)!
             guard let RGBArray = self.pixelData(image: image) else {
                 DispatchQueue.main.async {
                     completion(Constants.decryptingErrorMessage)
